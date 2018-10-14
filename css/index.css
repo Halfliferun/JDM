@@ -1,0 +1,278 @@
+body {
+  background-color: #f5f5f5;
+}
+/* 主体布局容器  */
+.jd_container {
+  /* 
+  在320-640之间是自适应的,原因如下：
+  1：做网页参照PSD 640px;
+  2: 640px和当前主流的设备尺寸有关系，iPhone4 尺寸320px
+  3：750px和当前主流的设备尺寸有关系 iPhone6 尺寸365px
+  */
+  max-width: 640px;
+  /* 最小的手机设备的宽度是320px */
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  /* height: 400px;
+  background-color: pink; */
+}
+/* 这种布局叫做双飞翼布局，或者圣杯布局 */
+/* 顶部搜索 */
+.jd_header {
+  position: fixed; /*固定定位 是 基于浏览器窗口进行定位的 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.jd_header .jd_header_box {
+  position: relative;
+  height: 40px;
+  background-color: #d8505c;
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+/* 注意login附近，最好不要使用百分比，否则固定的宽度有可能发生偏移，即logo被遮挡 */
+.jd_header .jd_header_box .icon_logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 40px;
+  /* background: url("../images/sprites.png") no-repeat 4px -103px/200px 200px; */
+  background-position: 4px -103px;
+}
+.jd_header .jd_header_box .login {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+}
+.jd_header .jd_header_box form {
+  width: 100%;
+  padding-left: 65px;
+  padding-right: 50px;
+  /* background: green; */
+}
+.jd_header .jd_header_box form input {
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  margin-top: 5px;
+  padding-left: 30px; /*这里可以把热裤字体向里移动*/
+}
+.jd_header .jd_header_box form .icon_search {
+  width: 20px;
+  height: 20px;
+  /* background: pink; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 70px;
+  margin-top: 10px;
+  /* background: url("../images/sprites.png") no-repeat -60px -109px/200px 200px; */
+  background-position: -60px -109px;
+}
+/* 轮播图 */
+.jd_banner {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.jd_banner ul li.now {
+  display: inline-block;
+  background-color: #fff !important;
+}
+.jd_banner ul:nth-child(1) {
+  width: 1000%;
+  transform: translateX(-10%); /*位移后会提高层级*/
+}
+.jd_banner ul:nth-child(1) li {
+  width: 10%;
+  float: left;
+}
+.jd_banner ul:nth-child(1) li a {
+  display: block;
+  width: 100%;
+}
+.jd_banner ul:nth-child(1) li a img {
+  display: block; /*这里的作用是去掉图片自带的间隙*/
+  width: 100%;
+}
+.jd_banner ul:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  width: 120px;
+  margin-left: -60px;
+  height: 10px;
+}
+.jd_banner ul:nth-child(2) li {
+  float: left;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-right: 5px;
+  border: 0.6px solid white;
+}
+.jd_banner ul:nth-child(2) li:hover {
+  background-color: #fff;
+}
+/* 导航栏 */
+.jd_nav {
+  display: block;
+  width: 100%;
+  /* overflow: hidden; */
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.jd_nav ul {
+  display: block;
+  width: 100%;
+}
+.jd_nav ul li {
+  width: 25%;
+  float: left;
+}
+.jd_nav ul li a {
+  display: block;
+  width: 100%;
+}
+.jd_nav ul li a img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.jd_nav ul li a p {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+/* 商品容器的样式和公用的样式 */
+.jd_product {
+  padding: 0 5px;
+}
+.jd_product .jd_pro_box {
+  margin-top: 10px;
+  box-shadow: 0 0 1px #ccc;
+  min-height: 200px;
+  background-color: #fff;
+}
+.jd_product .jd_pro_box .head {
+  height: 34px;
+  width: 100%;
+  line-height: 34px;
+  border-bottom: 1px solid #ccc;
+}
+.jd_product .jd_pro_box .head h3 {
+  font-weight: normal; /*正常的 自然的*/
+  padding-left: 23px;
+  position: relative;
+}
+.jd_product .jd_pro_box .head h3:before {
+  content: "";
+  width: 3px;
+  height: 12px;
+  background-color: #d8505c;
+  position: absolute;
+  top: 11px;
+  left: 10px;
+}
+
+/* 秒杀模块 */
+.sk_icon {
+  width: 16px;
+  height: 20px;
+  margin-left: 10px;
+  margin-top: 7px;
+  float: left;
+  background: url("../images/seckill-icon.png") no-repeat 0 0 / 16px 20px;
+}
+.sk_name {
+  color: #d8505c;
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.sk_time {
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.sk_time span {
+  /* margin-left: 5px; */
+  background: #000;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.sk_time .mh {
+  background: #fff;
+  color: #000;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+/* 秒杀的内容 */
+.sk_con {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.sk_con li {
+  width: 33%;
+  float: left;
+}
+.sk_con li a {
+  display: block;
+  width: 100%;
+  border-right: 1px solid #ddd;
+}
+.sk_con li:last-child > a {
+  border: 0px;
+}
+.sk_con li a img {
+  width: 64%;
+  display: block;
+  margin: 0 auto;
+}
+.sk_con li p {
+  text-align: center;
+  margin-top: 5px;
+}
+.sk_con li .nowPrice {
+  color: red;
+}
+.sk_con li .oldPrice {
+  text-decoration-line: line-through;
+  font-size: 12px;
+}
+/* 组合样式 */
+.w50p {
+  width: 50%;
+}
+.w50p img {
+  display: block;
+  width: 100%;
+}
+.br {
+  border-right: 1px solid #ddd;
+}
+.bl {
+  border-left: 1px solid #ddd;
+}
+.bb {
+  border-bottom: 1px solid #ddd;
+}

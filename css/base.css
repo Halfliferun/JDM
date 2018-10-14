@@ -1,0 +1,65 @@
+/* reset css 关于重置的*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  /* 让宽的设置从边框开始计算：在非固定像素布局处理内容溢出横向滚动条 */
+  box-sizing: border-box; /*这种方式是专门用来调节移动端的*/
+  /*移动端的主流浏览器内核 webkit,解决浏览器的兼容问题*/
+  -webkit-box-sizing: border-box;
+  /* 触摸时的高亮显示为完全透明  tap：触摸 */
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  font-size: 14px;
+  color: #333;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+input[type="search"],
+input[type="text"] {
+  border: none;
+  outline: none;
+  /* 去除移动端输入框的立体效果 */
+  -webkit-appearance: none;
+}
+/* common css 关于公共模块的*/
+.f_left {
+  float: left;
+}
+.f_right {
+  float: right;
+}
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  clear: both;
+  /* 不想占位置 块级元素 */
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden; /*如果content内有内容，该项可以将其隐藏 */
+}
+.ml10 {
+  margin-left: 10px;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+/* 精灵图的使用 以icon开始的*/
+[class^="icon_"],
+[class^=" icon_"] {
+  background: url("../images/sprites.png") no-repeat 0 0/200px 200px;
+}
